@@ -45,7 +45,7 @@ This yealds:
       
       a) A regular commit (or Squash & merge) - here you go, commit found.
       
-      b) A Merge commit:
+      b) A Merge commit -> tiny `git bisect` inside a PR:
 
       ```sh
       git bisect reset
