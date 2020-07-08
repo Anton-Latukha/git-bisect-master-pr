@@ -42,11 +42,11 @@ This yealds:
       , to find the PR.
 
   4. Case:
+  
+      ```sh
+      if test -z "$(git show --min-parents=2 --max-parents=2 <commit>)"; then echo <commit>; else <continue>; fi
+      ```
       
-      a) A regular commit (or Squash & merge) - here you go, commit found.
-      
-      b) A Merge commit -> tiny `git bisect` inside a PR:
-
       ```sh
       git bisect reset
       git bisect start <commit>^1 <commit>^2
