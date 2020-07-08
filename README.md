@@ -15,7 +15,12 @@ A proper clever walk that consists of two phases:
 1. Treat all PRs as atomic commits and detect the `master` branch commit that directs towards the particular PR.
 2. Bisect inside the PR using the "Merge commit" preserved history.
 
-This yealds a faster and more effective bisect (by having fewer steps in the bisect, because we skipping the internal PR commits in the first walk), at the same time yealding highest probablitily to automatically find and directly pointing the causal change, because first phase skips over the rough edges inside PRs and treats them atomically.
+This yealds:
+  :heavy_check_mark: Overall less steps in the bisect. Walking in Phase I avoids all the unrelated to the bisect commits internal to the more atomical PRs.
+    :heavy_check_mark: More effectiveness. Less bisect cycles. More casual bisect experience.
+    :heavy_check_mark: Yealding a higher probablitily to success in the bisect and find the causal PR.
+  :heavy_check_mark: The algorithm treats all merge practices as equal, but due to preservation of the original history and comments in "Create a merge commit" approach - enables the possibility of the Phase II.
+  :heavy_check_mark: Since Phase I gives a higher success bisect probability/effectiveness. By addressing the causal PR in the Phase II - yealding a higher probablitily to success in the bisect to automatically find and directly point to the causal commit.
 
 ### Algorithm
 
