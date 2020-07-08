@@ -12,28 +12,36 @@ for commit in $(git rev-list "$badCommit".."$goodCommit" --merges --first-parent
 done | xargs git bisect skip
 
 echo '
-1. Please continue with the classical:
 
-git bisect run <test-command>
-OR
-git bisect bad/good
+1. Continue the classical:
 
-, to find the PR.
+    ```sh
+    git bisect run <test-command>
+    # OR
+    git bisect bad/good
+    ```
+    , to find the PR.
 
+2. Case:
 
-2. When commit is found, save the commit hash(id).
+    ```sh
+    if test -z "$(git show --min-parents=2 --max-parents=2 <commit>)"; then echo <commit>; else echo <continue>; fi
+    ```
 
-3. Case:
-a) A regular commit (or Squash & merge) - here you go, commit found.
-b) A Merge commit:
+3. Biseci inside the PR commits:
 
-git bisect reset
-git bisect start <id>^1..<id>^2
+    ```sh
+    git bisect reset
+    git bisect start <commit>^1 <commit>^2
+    ```
+    ^ This starts a classical bisect inside a PR.
 
-git bisect run <test-command>
-OR
-git bisect bad/good
-
+    ```sh
+    git bisect run <test-command>
+    # OR
+    git bisect bad/good
+    ```
 
 4. Success!
+
 '
