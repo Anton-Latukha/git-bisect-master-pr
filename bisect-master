@@ -7,7 +7,7 @@ goodCommit=$2
 
 git bisect start "$badCommit" "$goodCommit"
 
-for commit in $(git rev-list "$badCommit".."$goodCommit" --merges --first-parent); do
+for commit in $(git rev-list "$goodCommit".."$badCommit" --merges --first-parent); do
   git rev-list "$commit"^2 --not "$commit"^
 done | xargs git bisect skip
 
