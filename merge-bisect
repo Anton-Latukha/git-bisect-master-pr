@@ -1,13 +1,13 @@
 #!/usr/bin/env sh
 
 # Left commit
-left=$1
+badCommit=$1
 # Right commit
-right=$2
+goodCommit=$2
 
-git bisect start "$left" "$right"
+git bisect start "$badCommit" "$goodCommit"
 
-for commit in $(git rev-list "$right".."$left" --merges --first-parent); do
+for commit in $(git rev-list "$badCommit".."$goodCommit" --merges --first-parent); do
   git rev-list "$commit"^2 --not "$commit"^
 done | xargs git bisect skip
 
