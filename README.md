@@ -19,7 +19,10 @@ This yealds a faster bisect (by having fewer steps in the bisect), and yealding 
 
 1. Take a range of the commits `<badCommit>` and `<goodCommit>`.
 
-2. `merge-bisect <badCommit>..<goodCommit>`
+2. Use the tool to start first phase of the walk.
+  ```sh
+  merge-bisect <badCommit>..<goodCommit>`
+  ```
 
 3. Please continue with the classical:
 
