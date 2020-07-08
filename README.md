@@ -32,7 +32,7 @@ This yealds:
       merge-bisect <badCommit> <goodCommit>`
       ```
   
-  3. Then continue the classical:
+  3. Continue with the classical:
 
       ```sh
       git bisect run <test-command>
