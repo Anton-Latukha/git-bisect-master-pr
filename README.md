@@ -23,13 +23,13 @@ This yealds a faster bisect (by having fewer steps in the bisect), and yealding 
 
 3. Please continue with the classical:
 
-```fish
-git bisect run <test-command>
-# OR
-git bisect bad/good
-```
+  ```sh
+  git bisect run <test-command>
+  # OR
+  git bisect bad/good
+  ```
 
-, to find the PR.
+  , to find the PR.
 
 
 4. When commit is found, save the commit hash(id).
@@ -38,15 +38,17 @@ git bisect bad/good
 a) A regular commit (or Squash & merge) - here you go, commit found.
 b) A Merge commit:
 
-```fish
-git bisect reset
-git bisect start <commit>^1..<commit>^2
-# ^ This takes into bisect a Merge commit range without the Meta Merge commit itself.
+  ```sh
+  git bisect reset
+  git bisect start <commit>^1..<commit>^2
+  ```
+  ^ This starts a classical bisect inside a PR.
 
-git bisect run <test-command>
-# OR
-git bisect bad/good
-```
+  ```sh
+  git bisect run <test-command>
+  # OR
+  git bisect bad/good
+  ```
 
 6. Success!
 
