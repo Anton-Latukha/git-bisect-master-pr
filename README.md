@@ -2,7 +2,7 @@
 
 Run bisect only on commits created directly inside `master` branch. That is the commits to master, squash & merge commits, and the "Merge commits" that are meta commits for direct PR merges.
 
-This allows to reconcile the "Squash & merge" and the "Merge commit" parties with proper solution.
+This allows to reconcile the "Squash & merge" and the "Merge commit" parties by giving them a proper solution.
 
 What we then have is a proper clever bisect walk.
 
