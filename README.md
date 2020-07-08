@@ -24,7 +24,7 @@ This yealds a faster and more effective bisect (by having fewer steps in the bis
   2. Use the tool to start first phase of the walk.
 
       ```sh
-      merge-bisect <badCommit>..<goodCommit>`
+      merge-bisect <badCommit> <goodCommit>`
       ```
   
   3. Then continue the classical:
@@ -44,7 +44,7 @@ This yealds a faster and more effective bisect (by having fewer steps in the bis
 
       ```sh
       git bisect reset
-      git bisect start <commit>^1..<commit>^2
+      git bisect start <commit>^1 <commit>^2
       ```
       ^ This starts a classical bisect inside a PR.
 
