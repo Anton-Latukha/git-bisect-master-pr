@@ -11,4 +11,29 @@ for commit in $(git rev-list "$right".."$left" --merges --first-parent); do
   git rev-list "$commit"^2 --not "$commit"^
 done | xargs git bisect skip
 
-echo 'Please continue with the classical `git bisect run ...` OR `git bisect bad/good` to find the PR.\nThen save the commit hash and can use classical `git bisect start <hash>..<beginning of the PR to>` to detect the cause.'
+echo '
+1. Please continue with the classical:
+
+git bisect run <test-command>
+OR
+git bisect bad/good
+
+, to find the PR.
+
+
+2. When commit is found, save the commit hash(id).
+
+3. Case:
+a) A regular commit (or Squash & merge) - here you go, commit found.
+b) A Merge commit:
+
+git bisect reset
+git bisect start <id>^1..<id>^2
+
+git bisect run <test-command>
+OR
+git bisect bad/good
+
+
+4. Success!
+'
