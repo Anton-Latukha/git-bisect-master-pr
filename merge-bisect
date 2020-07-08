@@ -10,3 +10,5 @@ git bisect start "$left" "$right"
 for commit in $(git rev-list "$right".."$left" --merges --first-parent); do
   git rev-list "$commit"^2 --not "$commit"^
 done | xargs git bisect skip
+
+echo 'Please continue with the classical `git bisect run ...` OR `git bisect bad/good` to find the PR.\nThen save the commit hash and can use classical `git bisect start <hash>..<beginning of the PR to>` to detect the cause.'
