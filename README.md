@@ -7,13 +7,15 @@ That is a walk over the commits:
   * PR "Squash & merge" commits
   * Direct commits to master
 
-This allows to reconcile the "Squash & merge" and the "Merge commit" parties by giving them a proper solution.
+---
 
-What we then have as a result - is a proper clever and faster bisect walk that consists of two phases:
-1. Treat all PRs as atomic commits and detect the `master` branch commit that directs towards PR.
+This proper solution allows to reconcile the "Squash & merge" and the "Merge commit" parties.
+
+A proper clever walk that consists of two phases:
+1. Treat all PRs as atomic commits and detect the `master` branch commit that directs towards the particular PR.
 2. Bisect inside the PR using the "Merge commit" preserved history.
 
-This yealds a faster bisect (by having fewer steps in the bisect), and yealding highest probablitily to automatically find and directly pointing the causal change, because first phase skips over the rough edges inside PRs and treats them atomically.
+This yealds a faster and more effective bisect (by having fewer steps in the bisect, because we skipping the internal PR commits in the first walk), at the same time yealding highest probablitily to automatically find and directly pointing the causal change, because first phase skips over the rough edges inside PRs and treats them atomically.
 
 ### Algorithm
 
