@@ -44,9 +44,11 @@ This yealds:
   4. Case:
   
       ```sh
-      if test -z "$(git show --min-parents=2 --max-parents=2 <commit>)"; then echo <commit>; else <continue>; fi
+      if test -z "$(git show --min-parents=2 --max-parents=2 <commit>)"; then echo <commit>; else echo <continue>; fi
       ```
-      
+  
+  5. Biseci inside the PR commits:
+  
       ```sh
       git bisect reset
       git bisect start <commit>^1 <commit>^2
@@ -59,7 +61,7 @@ This yealds:
       git bisect bad/good
       ```
 
-  5. Success!
+  6. Success!
 
 ---
 
