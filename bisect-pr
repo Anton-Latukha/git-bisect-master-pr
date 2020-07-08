@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+
+commit=$1
+
+if test -z "$(git show --min-parents=2 --max-parents=2 "$commit")"
+  then
+    echo "
+Success!
+
+Resulting commit $commit
+"
+
+  else
+    echo '
+So, $commit is a Merge commit. Now bisect would bisect commits inside that PR.
+'
+    git bisect reset
+    git bisect start "$commit"^1 "$commit"^2
+    echo '
+
+1. Continue Phase II with the classical:
+
+    ```sh
+    git bisect run <test-command>
+    # OR
+    git bisect bad/good
+    ```
+    to find the target commit.
+
+    This would bisect right to the commit.
+
+'
+fi
