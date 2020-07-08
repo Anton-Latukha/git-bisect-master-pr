@@ -1,6 +1,10 @@
 # merge-bisect
 
-Run bisect only on commits created directly inside `master` branch. That is the commits to master, squash & merge commits, and the "Merge commits" that are meta commits for direct PR merges.
+Run bisect only on commits created directly inside `master` branch.
+That is a walk over the commits:
+  * Meta PR "Merge commits"
+  * PR "Squash & merge" commits
+  * Direct commits to master
 
 This allows to reconcile the "Squash & merge" and the "Merge commit" parties by giving them a proper solution.
 
