@@ -41,19 +41,19 @@ This yealds a faster and more effective bisect (by having fewer steps in the bis
       a) A regular commit (or Squash & merge) - here you go, commit found.
       
       b) A Merge commit:
-          
+
           ```sh
           git bisect reset
           git bisect start <commit>^1..<commit>^2
           ```
           ^ This starts a classical bisect inside a PR.
-          
+
           ```sh
           git bisect run <test-command>
           # OR
           git bisect bad/good
           ```
-          
+
   5. Success!
 
 ---
