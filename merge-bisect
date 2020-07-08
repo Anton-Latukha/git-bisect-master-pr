@@ -1,7 +1,12 @@
 #!/usr/bin/env sh
 
-git bisect start master 75369f4a4c026772242368d870872562a3b693cb
+# Left commit
+left=$1
+# Right commit
+right=$2
 
-for rev in $(git rev-list 75369f4a4c026772242368d870872562a3b693cb..master --merges --first-parent); do
-  git rev-list "$rev"^2 --not "$rev"^
+git bisect start "$left" "$right"
+
+for commit in $(git rev-list "$right".."$left" --merges --first-parent); do
+  git rev-list "$commit"^2 --not "$commit"^
 done | xargs git bisect skip
