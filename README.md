@@ -17,41 +17,41 @@ This yealds a faster bisect (by having fewer steps in the bisect), and yealding 
 
 ### Algorithm
 
-1. Take a range of the commits `<badCommit>` and `<goodCommit>`.
-
-2. Use the tool to start first phase of the walk.
-  ```sh
-  merge-bisect <badCommit>..<goodCommit>`
-  ```
-  
-3. Please continue with the classical:
-  
-  ```sh
-  git bisect run <test-command>
-  # OR
-  git bisect bad/good
-  ```
-  , to find the PR.
-  
-4. When commit is found, save the commit hash(id).
-  
-5. Case:
-a) A regular commit (or Squash & merge) - here you go, commit found.
-b) A Merge commit:
-  
-  ```sh
-  git bisect reset
-  git bisect start <commit>^1..<commit>^2
-  ```
-  ^ This starts a classical bisect inside a PR.
-  
-  ```sh
-  git bisect run <test-command>
-  # OR
-  git bisect bad/good
-  ```
-  
-6. Success!
+  1. Take a range of the commits `<badCommit>` and `<goodCommit>`.
+    
+  2. Use the tool to start first phase of the walk.
+    ```sh
+    merge-bisect <badCommit>..<goodCommit>`
+    ```
+    
+  3. Please continue with the classical:
+    
+    ```sh
+    git bisect run <test-command>
+    # OR
+    git bisect bad/good
+    ```
+    , to find the PR.
+    
+  4. When commit is found, save the commit hash(id).
+    
+  5. Case:
+  a) A regular commit (or Squash & merge) - here you go, commit found.
+  b) A Merge commit:
+    
+    ```sh
+    git bisect reset
+    git bisect start <commit>^1..<commit>^2
+    ```
+    ^ This starts a classical bisect inside a PR.
+    
+    ```sh
+    git bisect run <test-command>
+    # OR
+    git bisect bad/good
+    ```
+    
+  6. Success!
 
 ---
 
