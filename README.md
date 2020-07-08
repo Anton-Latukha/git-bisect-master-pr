@@ -28,7 +28,6 @@ This yealds a faster bisect (by having fewer steps in the bisect), and yealding 
   # OR
   git bisect bad/good
   ```
-
   , to find the PR.
 
 
