@@ -27,7 +27,7 @@ This yealds a faster and more effective bisect (by having fewer steps in the bis
       merge-bisect <badCommit>..<goodCommit>`
       ```
   
-  3. Please continue with the classical:
+  3. Then continue the classical:
 
       ```sh
       git bisect run <test-command>
@@ -36,9 +36,7 @@ This yealds a faster and more effective bisect (by having fewer steps in the bis
       ```
   , to find the PR.
 
-  4. When commit is found, save the commit hash(id).
-  
-  5. Case:
+  4. Case:
   a) A regular commit (or Squash & merge) - here you go, commit found.
   b) A Merge commit:
   
@@ -54,7 +52,7 @@ This yealds a faster and more effective bisect (by having fewer steps in the bis
       git bisect bad/good
       ```
   
-  6. Success!
+  5. Success!
 
 ---
 
