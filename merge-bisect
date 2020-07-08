@@ -1,1 +1,5 @@
 #!/usr/bin/env sh
+
+for rev in $(git rev-list 75369f4a4c026772242368d870872562a3b693cb..master --merges --first-parent); do
+  git rev-list $rev^2 --not $rev^
+done | xargs git bisect skip
