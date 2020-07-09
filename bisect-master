@@ -26,6 +26,8 @@ prCommitsNum=$(echo "$prCommits" | wc -l)
 
 phaseCommitsNum=$(( ("$totalCommitsNum" / 2) - "$prCommitsNum" ))
 
+phaseSteps=$(echo "sqrt($phaseCommitsNum) + 1" | bc)
+
 echo "$prCommits" | xargs git bisect skip
 
 echo "
