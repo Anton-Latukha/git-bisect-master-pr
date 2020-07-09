@@ -32,6 +32,8 @@ echo "$prCommits" | xargs git bisect skip
 
 echo "
 
+NOTE: Git does not account for the skipped comments in its counters, there is less revisions and steps to bisect than it reports.
+
 Skipped $prCommitsNum commits inside PRs.
 "
 
