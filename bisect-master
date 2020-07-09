@@ -28,16 +28,16 @@ Skipped $(echo "$prCommits" | wc -l) commits inside PRs.
 echo '
 +====
 
-1. Finish Phase I with the classical:
+1. Finish Phase 1 with the classical:
 
     ```sh
     git bisect run <test-command>
     # OR
     git bisect bad/good
     ```
-    Phase I results in particular PR / `master` branch commit.
+    Phase 1 results in particular PR / `master` branch commit.
 
-2. Phase II:
+2. Phase 2:
 
     ```sh
     bisect-pr <commit>

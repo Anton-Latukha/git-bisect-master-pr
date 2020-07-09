@@ -18,7 +18,7 @@ So, $commit is a Merge commit. Now bisect would bisect commits inside that PR.
     git bisect start "$commit"^1 "$commit"^2
     echo '
 
-1. Continue Phase II with the classical:
+1. Continue Phase 2 with the classical:
 
     ```sh
     git bisect run <test-command>
