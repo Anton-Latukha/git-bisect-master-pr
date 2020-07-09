@@ -1,4 +1,4 @@
-# merge-bisect
+# git-bisect-master-pr
 
 Run bisect only on commits created directly inside `master` branch.
 
