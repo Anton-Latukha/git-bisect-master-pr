@@ -1,11 +1,13 @@
 # git-bisect-master-pr
 
-Run bisect only on commits created directly inside `master` branch.
+First, run bisect only on commits created directly on the `master` branch:
 
 That is a walk over the commits:
   * Meta PR "Merge commits"
   * PR "Squash & merge" commits
   * Direct commits to master
+  
+Then bisect inside the PR commits.
 
 ---
 
