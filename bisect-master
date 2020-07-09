@@ -22,6 +22,8 @@ prCommits=$(for commit in $(git rev-list "$goodCommit".."$badCommit" --merges --
   git rev-list "$commit"^2 --not "$commit"^
 done)
 
+prCommitsNum=$(echo "$prCommits" | wc -l)
+
 echo "$prCommits" | xargs git bisect skip
 
 echo "
