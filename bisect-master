@@ -34,6 +34,8 @@ echo "
 
 NOTE: Git does not account for the skipped comments in its counters, there is less revisions and steps to bisect than it reports.
 
+This Phase works in $phaseCommitsNum commits, it is ~$phaseSteps steps in this phase.
+
 Skipped $prCommitsNum commits inside PRs.
 "
 
