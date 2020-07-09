@@ -24,44 +24,36 @@ This yealds:
 
 ### Algorithm
 
-  1. Take a range of the commits `<badCommit>` and `<goodCommit>`.
-    
-  2. Use the tool to start first phase of the walk.
+  1. Phase 1 of the walk.
 
       ```sh
-      merge-bisect <badCommit> <goodCommit>`
+      git-bisect-master <badCommit> <goodCommit>`
       ```
   
-  3. Continue with the classical:
+  2. Finish bisect phase clasically:
 
       ```sh
       git bisect run <test-command>
       # OR
       git bisect bad/good
       ```
-      , to find the PR.
+      , to find the PR/commit.
 
-  4. Case:
+  3. Then, phase 2:
   
       ```sh
-      if test -z "$(git show --min-parents=2 --max-parents=2 <commit>)"; then echo <commit>; else echo <continue>; fi
+      git-bisect-pr <commit>
       ```
   
-  5. Biseci inside the PR commits:
+  4. Finish bisect phase clasically:
   
-      ```sh
-      git bisect reset
-      git bisect start <commit>^1 <commit>^2
-      ```
-      ^ This starts a classical bisect inside a PR.
-
       ```sh
       git bisect run <test-command>
       # OR
       git bisect bad/good
       ```
 
-  6. Success!
+  5. Success!
 
 ---
 
