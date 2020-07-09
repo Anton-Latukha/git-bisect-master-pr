@@ -16,6 +16,7 @@ for commit in $(git rev-list "$goodCommit".."$badCommit" --merges --first-parent
 done | xargs git bisect skip
 
 echo '
++====
 
 1. Continue Phase I with the classical:
 
@@ -24,9 +25,9 @@ echo '
     # OR
     git bisect bad/good
     ```
-    to find the PR commit.
+    Phase I results in particular PR / `master` branch commit.
 
-2. After Phase I is done, start Phase II by:
+2. Phase II:
 
     ```sh
     bisect-pr <commit>
