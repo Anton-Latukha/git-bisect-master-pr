@@ -28,7 +28,7 @@ Skipped $(echo "$prCommits" | wc -l) commits inside PRs.
 echo '
 +====
 
-1. Continue Phase I with the classical:
+1. Finish Phase I with the classical:
 
     ```sh
     git bisect run <test-command>
