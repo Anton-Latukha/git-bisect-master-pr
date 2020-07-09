@@ -21,6 +21,10 @@ done)
 
 echo "$prCommits" | xargs git bisect skip
 
+echo "
+Skipped $(echo "$prCommits" | wc -l) commits inside PRs.
+"
+
 echo '
 +====
 
