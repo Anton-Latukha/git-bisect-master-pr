@@ -31,7 +31,8 @@ phaseSteps=$(echo "sqrt($phaseCommitsNum) + 1" | bc)
 echo "$prCommits" | xargs git bisect skip
 
 echo "
-Skipped $(echo "$prCommits" | wc -l) commits inside PRs.
+
+Skipped $prCommitsNum commits inside PRs.
 "
 
 echo '
