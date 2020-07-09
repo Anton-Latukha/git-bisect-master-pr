@@ -5,6 +5,10 @@ badCommit=$1
 # Right commit
 goodCommit=$2
 
+echo '
+Searching for the `master` branch based commits.
+'
+
 git bisect start "$badCommit" "$goodCommit"
 
 for commit in $(git rev-list "$goodCommit".."$badCommit" --merges --first-parent); do
