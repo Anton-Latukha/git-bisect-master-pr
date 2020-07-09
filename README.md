@@ -24,7 +24,7 @@ This yealds:
   * :heavy_check_mark: The algorithm treats all merge practices as equal, but due to Meta information commits and the preservation of the original history and comments in "Create a merge commit" approach - enables the possibility of the Phase II, inside PR search.
   * :heavy_check_mark: Since Phase I gives a higher success bisect probability/effectiveness. In the small commit walk in Phase II, addressing only the causal PR, - the total bisect walk has a much higher probablitily to successed. And also allows to automatically find and directly point to the causal commit more robustly and more precicely.
   
-  And allows to relax about the commit history and merge methods.
+  And allows to relax about the commit history and merge methods and preserve original author smaller diff commits with comments.
 
 ### Algorithm
 
