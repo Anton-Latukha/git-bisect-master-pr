@@ -54,7 +54,7 @@ echo '
 2. Phase 2:
 
     ```sh
-    bisect-pr <commit>
+    git-bisect-pr <commit>
     ```
 
 '
