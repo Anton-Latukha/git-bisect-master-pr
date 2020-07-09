@@ -13,7 +13,7 @@ Then bisect inside the PR commits.
 
 This proper solution allows to reconcile the "Squash & merge" and the "Merge commit" parties.
 
-A proper clever walk that consists of two phases:
+The proper clever walk that consists of two phases:
 1. Treat all PRs as atomic commits and detect the `master` branch commit that directs towards the particular PR.
 2. Bisect inside the PR using the "Merge commit" preserved history.
 
