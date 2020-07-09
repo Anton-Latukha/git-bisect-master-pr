@@ -11,9 +11,11 @@ Searching for the `master` branch based commits.
 
 git bisect start "$badCommit" "$goodCommit"
 
-for commit in $(git rev-list "$goodCommit".."$badCommit" --merges --first-parent); do
+prCommits=$(for commit in $(git rev-list "$goodCommit".."$badCommit" --merges --first-parent); do
   git rev-list "$commit"^2 --not "$commit"^
-done | xargs git bisect skip
+done)
+
+echo "$prCommits" | xargs git bisect skip
 
 echo '
 +====
