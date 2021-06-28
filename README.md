@@ -31,7 +31,7 @@ This yealds:
   1. Phase 1 of the walk.
 
       ```sh
-      git-bisect-master <badCommit> <goodCommit>`
+      git-bisect-master <badCommit> <goodCommit>
       ```
   
   2. Finish bisect phase clasically:
